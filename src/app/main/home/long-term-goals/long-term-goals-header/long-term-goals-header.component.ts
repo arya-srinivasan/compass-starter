@@ -26,9 +26,23 @@ export class LongTermGoalsHeaderComponent implements OnInit {
   /** Loading icon. */
   loading: WritableSignal<boolean> = signal(false);
 
+  title: WritableSignal<string> = signal('Long-term Goals')
+
+  isEditing: WritableSignal<boolean> = signal(false);
+
   // --------------- COMPUTED DATA -----------------------
 
   // --------------- EVENT HANDLING ----------------------
+  onPencilClick(){
+    this.isEditing.update(current => !current);
+    console.log("Pencil clicked");
+  }
+
+  onSave(event: Event){
+    const input = event.target as HTMLInputElement;
+    this.title.set(input.value);
+    this.isEditing.set(false);
+  }
 
   // --------------- OTHER -------------------------------
 

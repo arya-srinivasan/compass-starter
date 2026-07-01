@@ -4,6 +4,7 @@ import { User } from 'src/app/core/store/user/user.model';
 import { AuthStore } from 'src/app/core/store/auth/auth.store';
 import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch-write.service';
 import { QuarterlyGoalsModalComponent } from 'src/app/main/home/quarterly-goals/quarterly-goals-modal/quarterly-goals-modal.component'
+import {QuarterlyGoalsHeaderComponent} from 'src/app/main/home/quarterly-goals/quarterly-goals-header/quarterly-goals-header.component';
 
 @Component({
   selector: 'app-quarterly-goals',
@@ -12,7 +13,7 @@ import { QuarterlyGoalsModalComponent } from 'src/app/main/home/quarterly-goals/
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: QuarterlyGoalsAnimations,
   standalone: true,
-  imports: [ QuarterlyGoalsModalComponent
+  imports: [ QuarterlyGoalsHeaderComponent, QuarterlyGoalsModalComponent,
   ],
 })
 export class QuarterlyGoalsComponent implements OnInit {
@@ -21,7 +22,31 @@ export class QuarterlyGoalsComponent implements OnInit {
 
   /** The current signed in user. */
   currentUser: Signal<User> = this.authStore.user;
-
+  
+  // sampleData: WritableSignal<QuarterlyGoalData | null> = signal(null);
+  sampleData: QuarterlyGoalData = {
+        __id: 'qg2',
+        __userId: 'test-user',
+        __hashtagId: 'ht1',
+        text: 'Apply to all internships',
+        completed: false,
+        order: 2,
+        _createdAt: Timestamp.now(),
+        _updatedAt: Timestamp.now(),
+        _deleted: false,
+        hashtag: {
+          __id: 'ht1',
+          __userId: 'test-user',
+          name: 'apply-internships',
+          color: '#EE8B72',
+          _createdAt: Timestamp.now(),
+          _updatedAt: Timestamp.now(),
+          _deleted: false,
+        },
+        weeklyGoalsTotal: 3,
+        weeklyGoalsComplete: 2,
+  };
+  
   // --------------- LOCAL UI STATE ----------------------
 
   /** Loading icon. */
@@ -41,5 +66,29 @@ export class QuarterlyGoalsComponent implements OnInit {
   // --------------- LOAD AND CLEANUP --------------------
   
   ngOnInit(): void {
+    // setTimeout(() => {
+    //   this.sampleData.set({
+    //     __id: 'qg2',
+    //     __userId: 'test-user',
+    //     __hashtagId: 'ht1',
+    //     text: 'Apply to all internships',
+    //     completed: false,
+    //     order: 2,
+    //     _createdAt: Timestamp.now(),
+    //     _updatedAt: Timestamp.now(),
+    //     _deleted: false,
+    //     hashtag: {
+    //       __id: 'ht1',
+    //       __userId: 'test-user',
+    //       name: 'apply-internships',
+    //       color: '#EE8B72',
+    //       _createdAt: Timestamp.now(),
+    //       _updatedAt: Timestamp.now(),
+    //       _deleted: false,
+    //     },
+    //     weeklyGoalsTotal: 3,
+    //     weeklyGoalsComplete: 2,
+    //   });
+    // }, 4000);
   }
 }

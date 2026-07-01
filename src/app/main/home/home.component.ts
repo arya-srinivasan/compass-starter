@@ -5,6 +5,12 @@ import { AuthStore } from 'src/app/core/store/auth/auth.store';
 import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch-write.service';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 import { QuarterlyGoalsComponent } from 'src/app/main/home/quarterly-goals/quarterly-goals.component'
+import { LongTermGoalsComponent } from 'src/app/main/home/long-term-goals/long-term-goals.component'
+import { LongTermGoalsComponent } from './long-term-goals/long-term-goals.component';
+import { DateTimeComponent } from 'src/app/main/home/date-time/date-time.component';
+import { GreetingComponent } from 'src/app/main/home/greeting/greeting.component'
+import { QuarterlyGoalsComponent } from 'src/app/main/home/quarterly-goals/quarterly-goals.component';
+import { WeeklyGoalsComponent } from 'src/app/main/home/weekly-goals/weekly-goals.component';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +20,13 @@ import { QuarterlyGoalsComponent } from 'src/app/main/home/quarterly-goals/quart
   standalone: true,
   animations: HomeAnimations, 
   imports: [
-    NavbarComponent, QuarterlyGoalsComponent
+    QuarterlyGoalsComponent,
+    DateTimeComponent,
+    GreetingComponent,
+    QuarterlyGoalsComponent,
+    WeeklyGoalsComponent,
+    NavbarComponent,
+    LongTermGoalsComponent
   ]
 })
 export class HomeComponent implements OnInit {

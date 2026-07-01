@@ -3,6 +3,7 @@ import { QuarterlyGoalsHeaderAnimations } from './quarterly-goals-header.animati
 import { User } from 'src/app/core/store/user/user.model';
 import { AuthStore } from 'src/app/core/store/auth/auth.store';
 import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch-write.service';
+import { getQuarterAndYear } from 'src/app/core/utils/time.utils';
 
 @Component({
   selector: 'app-quarterly-goals-header',
@@ -27,6 +28,9 @@ export class QuarterlyGoalsHeaderComponent implements OnInit {
   loading: WritableSignal<boolean> = signal(false);
 
   // --------------- COMPUTED DATA -----------------------
+
+  getQuarterAndYear = getQuarterAndYear; // import from time.utils.ts
+
 
   // --------------- EVENT HANDLING ----------------------
 

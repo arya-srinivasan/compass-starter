@@ -1,51 +1,7 @@
-@import url(//fonts.googleapis.com/css?family=Oxygen);
-
 :host {
   display: block;
   .weekly-goals-item-container {
     // REMOVE WHEN FINISHING LAYOUT STYLES
-    /* border: 1px solid black; */
-    background-color: #FFFFFF;
-    height: 65px;
-    width: 387px;
-    /* top: -96px; */
-    /* left: -2202px; */
-    border-top: 1.25px solid #e0e0e0;
-    border-right: 3.75px solid #FFFFFF;
-    border-left: 3.75px solid #FFFFFF;
-    border-bottom: 1.25px solid #e0e0e0;
-   }
-
-  .container_1{
-  display: flex;
-  flex-direction: row;
-  }  
-
-.goal-title{
-  font-family: Oxygen;
-  font-weight: 400;
-  font-size: 16.25px;
-  color: #5A5A5A;
-  margin-top: 11.25px;
-}
-.hashtag{
-  font-family: Oxygen;
-  font-weight: 400;
-  font-size: 15px;
-  color: #2DBDB1;
-}
-
-.check {
-  --mdc-checkbox-unselected-icon-color: #2dbdb1;
-  --mdc-checkbox-unselected-hover-icon-color: #2dbdb1;
-  --mdc-checkbox-unselected-focus-icon-color: #2dbdb1;
-  --mdc-checkbox-selected-icon-color: #2dbdb1;
-  --mdc-checkbox-selected-hover-icon-color: #2dbdb1;
-  --mdc-checkbox-selected-focus-icon-color: #2dbdb1;
-  --mdc-checkbox-selected-pressed-icon-color: #2dbdb1;
-  --mdc-checkbox-selected-checkmark-color: #ffffff;
-  --mat-checkbox-selected-ripple-color: #2dbdb1;
-  border-radius: 4.21px;
-}
-
+    border: 1px solid black;
+  }
 }

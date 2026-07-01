@@ -20,7 +20,7 @@ import { WeeklyGoalsComponent } from 'src/app/main/home/weekly-goals/weekly-goal
   imports: [
     DateTimeComponent,
     GreetingComponent,
-    QuarterlyGoalsComponent
+    QuarterlyGoalsComponent,
     WeeklyGoalsComponent,
     NavbarComponent,
     LongTermGoalsComponent

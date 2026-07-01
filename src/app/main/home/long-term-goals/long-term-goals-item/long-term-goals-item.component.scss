@@ -1,7 +1,21 @@
 :host {
   display: block;
   .long-term-goals-item-container {
-    // REMOVE WHEN FINISHING LAYOUT STYLES
-    border: 1px solid black;
+    display: flex;
+    width: 100%;
+    background-color: white;
+    .goal-details {
+      display: flex;
+      flex-direction: column;
+      .year {
+        font-size: 16px;
+        color: #4B5853;
+        font-weight: bold;
+      }
+      .goal {
+        font-size: 16px;
+        color: #4B5853;
+      }
+    }
   }
 }

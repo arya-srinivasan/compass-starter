@@ -10,6 +10,7 @@ import { WEEKLYGOAL_DB } from 'src/app/core/store/weekly-goal/weekly-goal.mock';
 import { WeeklyGoal } from 'src/app/core/store/weekly-goal/weekly-goal.model';
 import { HASHTAG_DB } from 'src/app/core/store/hashtag/hashtag.mock';
 import { Hashtag } from 'src/app/core/store/hashtag/hashtag.model';
+import { WeeklyGoalsModalComponent } from './weekly-goals-modal/weekly-goals-modal.component'
 
 @Component({
   selector: 'app-weekly-goals',
@@ -19,6 +20,7 @@ import { Hashtag } from 'src/app/core/store/hashtag/hashtag.model';
   animations: WeeklyGoalsAnimations,
   standalone: true,
   imports: [ WeeklyGoalsItemComponent,
+            WeeklyGoalsModalComponent, 
   ],
 })
 export class WeeklyGoalsComponent implements OnInit {

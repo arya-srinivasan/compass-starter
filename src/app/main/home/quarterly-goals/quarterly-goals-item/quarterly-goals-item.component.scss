@@ -1,7 +1,64 @@
+@import url(//fonts.googleapis.com/css?family=Oxygen);
+
 :host {
   display: block;
   .quarterly-goals-item-container {
     // REMOVE WHEN FINISHING LAYOUT STYLES
-    border: 1px solid black;
-  }
+    /* border: 1px solid black; */
+    background-color: #FFFFFF;
+    height: 65px;
+    width: 387px;
+  /* border-top: 3.75px white;
+  border-right: 3.75px white;
+  border-left: 3.75px white;
+  border-bottom: 1.25px white; */
+
+.container{
+  display: flex;
+  flex-direction: row;
 }
+
+.text-container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;           
+    min-width: 0;      
+}
+
+.goal-title{
+  font-family: Oxygen;
+  font-weight: 400;
+  font-size: 16.25px;
+  color: #5A5A5A;
+  margin-top: 11.25px;
+}
+.hashtag{
+  font-family: Oxygen;
+  font-weight: 400;
+  font-size: 15px;
+  color: #2DBDB1;
+}
+.completed-goals{
+  display: flex;
+  justify-content: flex-end;
+  font-family: Oxygen;
+  font-weight: 400;
+  font-size: 15px;
+  color: #5A5A5A;
+  margin-top: 40px;
+  margin-right: 8px;
+  letter-spacing: 2px;
+}
+
+
+.check {
+    --mdc-checkbox-selected-checkmark-color: #FFFFFF;
+    --mdc-checkbox-selected-icon-color: #2DBDB1;
+    --mdc-checkbox-selected-hover-icon-color: #2DBDB1;
+    --mdc-checkbox-selected-focus-icon-color: #2DBDB1;
+    --mdc-checkbox-unselected-icon-color: #2DBDB1;
+    --mdc-checkbox-selected-ripple-color: #2DBDB1;
+}
+}
+}
+

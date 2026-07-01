@@ -21,7 +21,31 @@ export class QuarterlyGoalsComponent implements OnInit {
 
   /** The current signed in user. */
   currentUser: Signal<User> = this.authStore.user;
-
+  
+  // sampleData: WritableSignal<QuarterlyGoalData | null> = signal(null);
+  sampleData: QuarterlyGoalData = {
+        __id: 'qg2',
+        __userId: 'test-user',
+        __hashtagId: 'ht1',
+        text: 'Apply to all internships',
+        completed: false,
+        order: 2,
+        _createdAt: Timestamp.now(),
+        _updatedAt: Timestamp.now(),
+        _deleted: false,
+        hashtag: {
+          __id: 'ht1',
+          __userId: 'test-user',
+          name: 'apply-internships',
+          color: '#EE8B72',
+          _createdAt: Timestamp.now(),
+          _updatedAt: Timestamp.now(),
+          _deleted: false,
+        },
+        weeklyGoalsTotal: 3,
+        weeklyGoalsComplete: 2,
+  };
+  
   // --------------- LOCAL UI STATE ----------------------
 
   /** Loading icon. */
@@ -41,5 +65,29 @@ export class QuarterlyGoalsComponent implements OnInit {
   // --------------- LOAD AND CLEANUP --------------------
   
   ngOnInit(): void {
+    // setTimeout(() => {
+    //   this.sampleData.set({
+    //     __id: 'qg2',
+    //     __userId: 'test-user',
+    //     __hashtagId: 'ht1',
+    //     text: 'Apply to all internships',
+    //     completed: false,
+    //     order: 2,
+    //     _createdAt: Timestamp.now(),
+    //     _updatedAt: Timestamp.now(),
+    //     _deleted: false,
+    //     hashtag: {
+    //       __id: 'ht1',
+    //       __userId: 'test-user',
+    //       name: 'apply-internships',
+    //       color: '#EE8B72',
+    //       _createdAt: Timestamp.now(),
+    //       _updatedAt: Timestamp.now(),
+    //       _deleted: false,
+    //     },
+    //     weeklyGoalsTotal: 3,
+    //     weeklyGoalsComplete: 2,
+    //   });
+    // }, 4000);
   }
 }

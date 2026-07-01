@@ -20,9 +20,9 @@ import { WeeklyGoalsModalComponent } from './weekly-goals-modal/weekly-goals-mod
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: WeeklyGoalsAnimations,
   standalone: true,
-  imports: [ WeeklyGoalsHeaderComponent
   imports: [ WeeklyGoalsItemComponent,
-            WeeklyGoalsModalComponent, 
+            WeeklyGoalsModalComponent,
+            WeeklyGoalsHeaderComponent,
   ],
 })
 export class WeeklyGoalsComponent implements OnInit {

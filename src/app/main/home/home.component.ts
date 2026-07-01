@@ -17,7 +17,7 @@ import { WeeklyGoalsComponent } from 'src/app/main/home/weekly-goals/weekly-goal
   animations: HomeAnimations,
   imports: [
     GreetingComponent,
-    QuarterlyGoalsComponent
+    QuarterlyGoalsComponent,
     WeeklyGoalsComponent,
     NavbarComponent,
   ]

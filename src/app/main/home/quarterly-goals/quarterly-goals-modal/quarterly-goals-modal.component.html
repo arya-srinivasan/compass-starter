@@ -1,3 +1,37 @@
 <div class="quarterly-goals-modal-container">
-  quarterly-goals-modal works!
+  <div class="header">
+     <div class="nav-bar">
+        <div class="title">Quarterly Goals</div>
+        <button type="close" class="close-button">
+          <mat-icon class="close-icon">close</mat-icon>
+        </button>
+     </div>
+     <div class="period">{{ getQuarterAndYear() }}</div>
+  </div>
+  <div cdkDropList (cdkDropListDropped)="onDrop($event)">
+    @for (goal of goals(); track goal) {
+       <div class="six-stack" cdkDrag>
+         <mat-icon class="six-stack-icon" cdkDragHandle>drag_indicator</mat-icon>
+         <div class="goal-text">
+           <input class="goal-text-input"
+             placeholder="Enter your goal..."
+             (keyup.enter)="onAddGoal()"
+           />
+         </div>
+         <select class="topic-options"
+           placeholder="#hashtags..."
+           [(value)]="goal.topic"
+           [class.apply-internships]="goal.topic === '#apply-internships'"
+           [class.class-algorithms]="goal.topic === '#class-algorithms'"
+           [class.interview-technical]="goal.topic === '#interview-technical'"
+        >
+          @for (topic of topics; track topic) {
+             <option [value]='topic' class="topic-drop-down"> {{topic}}</option>
+          }
+        </select>
+    </div>
+    }
+  <div class="save-button-container">
+    <button class="save-button" (click)="onSave()">Save</button>
+  </div>
 </div>

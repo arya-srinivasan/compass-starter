@@ -2,6 +2,13 @@
   display: block;
   .greeting-container {
     // REMOVE WHEN FINISHING LAYOUT STYLES
-    border: 1px solid black;
+    display: flex;
+    background: #E1FBF9;
+    height: 100%;
+    padding: 20px;
+    .greeting {
+      color: #2DBDB1;
+      font-size: 40px;
+    }
   }
 }

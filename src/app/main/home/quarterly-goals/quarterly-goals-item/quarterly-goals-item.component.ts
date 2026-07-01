@@ -3,6 +3,8 @@ import { QuarterlyGoalsItemAnimations } from './quarterly-goals-item.animations'
 import { User } from 'src/app/core/store/user/user.model';
 import { AuthStore } from 'src/app/core/store/auth/auth.store';
 import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch-write.service';
+import { MatCheckbox } from '@angular/material/checkbox';
+import { QuarterlyGoalData } from '../../home.model';
 
 @Component({
   selector: 'app-quarterly-goals-item',
@@ -11,7 +13,7 @@ import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: QuarterlyGoalsItemAnimations,
   standalone: true,
-  imports: [
+  imports: [ MatCheckbox,
   ],
 })
 export class QuarterlyGoalsItemComponent implements OnInit {
@@ -19,12 +21,15 @@ export class QuarterlyGoalsItemComponent implements OnInit {
   // --------------- INPUTS AND OUTPUTS ------------------
 
   /** The current signed in user. */
-  currentUser: Signal<User> = this.authStore.user;
+  // currentUser: Signal<User> = this.authStore.user;
 
   // --------------- LOCAL UI STATE ----------------------
 
   /** Loading icon. */
   loading: WritableSignal<boolean> = signal(false);
+  // goalText: string = "Apply to all internships";
+  // hashText: string = "apply-internships";
+  goal = input<QuarterlyGoalData>();
 
   // --------------- COMPUTED DATA -----------------------
 

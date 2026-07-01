@@ -1,7 +1,10 @@
 <app-navbar></app-navbar>
 <app-greeting></app-greeting>
+<app-quarterly-goals></app-quarterly-goals>
+<app-weekly-goals></app-weekly-goals>
 <div class="home-container">
   @if (currentUser()) {
     {{ currentUser().name }}
   }
+  <app-weekly-goals></app-weekly-goals>
 </div>

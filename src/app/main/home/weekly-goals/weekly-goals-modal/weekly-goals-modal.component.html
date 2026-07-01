@@ -1,3 +1,44 @@
 <div class="weekly-goals-modal-container">
-  weekly-goals-modal works!
+  <div class="modal-header">
+    <div class="modal-header-text">
+      <div class="modal-header-title">Weekly Goals</div>
+      <time class="modal-header-date">
+        {{ startOfWeek() + " - " + endOfWeek() }}
+      </time>
+    </div>
+    <button mat-icon-button class="close-button" mat-dialog-close (click)="onClose()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div cdkDropList (cdkDropListDropped)="onDrop($event)">
+  @for(goal of goals(); track goal){
+  <div class="content" cdkDrag>
+    <mat-icon class="drag-icon" cdkDragHandle>drag_indicator</mat-icon>
+    <div class="content-text">
+      <input class="content-text-input" 
+        placeholder="Enter your goal..."
+        [value]="goal.text"
+        (keyup.enter)="onAddGoal($event)"
+        />
+    </div>
+    <select class='goal-category' 
+      placeholder="quarterly goal..."
+      [value]="goal.category"
+      [class.apply-internships]="goal.category === '#apply-internships'"
+      [class.class-algorithms]="goal.category === '#class-algorithms'"
+      >
+      
+      @for(category of categories; track category){
+       <option [value]='category' class="content-drop-down"> {{category}}</option>
+      }
+    </select>
+    
+  </div>
+  }
+
+  <div class="save-button">
+    <button class="save" (click)="onSave()" [disabled]="loading()">
+      {{ loading() ? 'Saving' : 'Save'}}
+    </button>
+  </div>
 </div>

@@ -4,6 +4,7 @@ import { User } from 'src/app/core/store/user/user.model';
 import { AuthStore } from 'src/app/core/store/auth/auth.store';
 import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch-write.service';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
+import { DateTimeComponent } from 'src/app/main/home/date-time/date-time.component';
 import { GreetingComponent } from 'src/app/main/home/greeting/greeting.component'
 import {QuarterlyGoalsComponent} from 'src/app/main/home/quarterly-goals/quarterly-goals.component';
 import { WeeklyGoalsComponent } from 'src/app/main/home/weekly-goals/weekly-goals.component';
@@ -16,6 +17,7 @@ import { WeeklyGoalsComponent } from 'src/app/main/home/weekly-goals/weekly-goal
   standalone: true,
   animations: HomeAnimations,
   imports: [
+    DateTimeComponent,
     GreetingComponent,
     QuarterlyGoalsComponent
     WeeklyGoalsComponent,

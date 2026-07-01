@@ -2,6 +2,112 @@
   display: block;
   .weekly-goals-modal-container {
     // REMOVE WHEN FINISHING LAYOUT STYLES
-    border: 1px solid black;
+    //border: 1px solid black;
+    border-radius: 12.5px 12.5px 0 0;
+    background: #FFF;
+    width: 801.25px;
+    padding: 43.75px 48px;
+    
+    .modal-header{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+
+      .modal-header-text{
+        color: #4B5853;
+        
+        .modal-header-title{
+          font-size: 30px;
+          margin-bottom: 10px;
+        }
+        
+        .modal-header-date{
+          font-size: 25px;
+          font-weight: 700;
+        }
+      }
+
+      .close-button{
+        transform: scale(1.4);
+      }
+    }
+
+    .content{
+      display: flex;
+      margin: 37.5px 0px;
+
+      .drag-icon{
+        color: #2DBDB1;
+      }
+
+      .content-text{
+        margin: 0px 40px 0px 10px;
+        
+        .content-text-input{
+          width: 413.75px;
+          border: none;
+          border-bottom: 0.93px solid #4B5853;
+          outline: none;
+          background-color: transparent;
+          color: #4B5853;
+          font-family: Oxygen;
+          font-size: 19.095px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: normal;
+        }
+      }
+
+      .goal-category{
+        width: 210px;
+        border: none;
+        border-bottom: 0.93px solid #4B5853;
+        color: #4B5853;
+        outline: none;
+        font-family: Oxygen;
+        font-size: 19.095px;
+        font-weight: 300;
+        
+        &.apply-internships{
+          color: #2DBDB1;
+          border-bottom: 0.93px solid #2DBDB1;
+        }
+
+        &.class-algorithms{
+          color: #FFB987;
+          border-bottom: 0.93px solid #FFB987;
+        }
+      }
+    }
+
+    .save-button{
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      //margin-top: 50px;
+      
+      .save{
+        width: 138.933px;
+        height: 42.5px;
+        border-radius: 12.5px;
+        border: none;
+        background: #2DBDB1;
+        color: #FFF;
+        text-align: center;
+        font-family: Oxygen;
+        font-size: 22.5px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        cursor: pointer;
+      }
+    }
+    
+    select[value='#apply-internships']{
+      color: teal;
+    }
+    select[value='#class-algorithms']{
+      color: yellow;
+    }
   }
 }

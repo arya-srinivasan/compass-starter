@@ -3,9 +3,7 @@ import { QuarterlyGoalsAnimations } from './quarterly-goals.animations';
 import { User } from 'src/app/core/store/user/user.model';
 import { AuthStore } from 'src/app/core/store/auth/auth.store';
 import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch-write.service';
-import { QuarterlyGoalsItemComponent } from './quarterly-goals-item/quarterly-goals-item.component'
-import { QuarterlyGoalData } from '../home.model';
-import { Timestamp } from '@angular/fire/firestore';
+import {QuarterlyGoalsHeaderComponent} from 'src/app/main/home/quarterly-goals/quarterly-goals-header/quarterly-goals-header.component';
 
 @Component({
   selector: 'app-quarterly-goals',
@@ -14,7 +12,7 @@ import { Timestamp } from '@angular/fire/firestore';
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: QuarterlyGoalsAnimations,
   standalone: true,
-  imports: [ QuarterlyGoalsItemComponent,
+  imports: [ QuarterlyGoalsHeaderComponent
   ],
 })
 export class QuarterlyGoalsComponent implements OnInit {

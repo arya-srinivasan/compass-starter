@@ -3,6 +3,9 @@ import { DateTimeAnimations } from './date-time.animations';
 import { User } from 'src/app/core/store/user/user.model';
 import { AuthStore } from 'src/app/core/store/auth/auth.store';
 import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch-write.service';
+import { DatePipe } from '@angular/common';
+import { interval, map } from 'rxjs';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-date-time',
@@ -12,6 +15,7 @@ import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch
   animations: DateTimeAnimations,
   standalone: true,
   imports: [
+    DatePipe
   ],
 })
 export class DateTimeComponent implements OnInit {
@@ -20,6 +24,24 @@ export class DateTimeComponent implements OnInit {
 
   /** The current signed in user. */
   currentUser: Signal<User> = this.authStore.user;
+
+  time: Signal<Date> = toSignal(
+    interval(1000).pipe(
+      map(() => new Date())
+    ),
+    { initialValue: new Date() }
+  );
+
+  dateSuffix: Signal<string> = computed(() => {
+    const currentDay = this.time().getDate();
+    if (currentDay > 3 && currentDay < 21) return 'th';
+    switch (currentDay % 10) {
+      case 1: return 'st';
+      case 2: return 'nd';
+      case 3: return 'rd';
+      default: return 'th';
+    }
+  });
 
   // --------------- LOCAL UI STATE ----------------------
 

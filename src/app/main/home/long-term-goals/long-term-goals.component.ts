@@ -3,6 +3,7 @@ import { LongTermGoalsAnimations } from './long-term-goals.animations';
 import { User } from 'src/app/core/store/user/user.model';
 import { AuthStore } from 'src/app/core/store/auth/auth.store';
 import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch-write.service';
+import { LongTermGoalsItemComponent } from 'src/app/main/home/long-term-goals/long-term-goals-item/long-term-goals-item.component'
 import { LongTermGoalsHeaderComponent } from './long-term-goals-header/long-term-goals-header.component';
 
 
@@ -13,7 +14,7 @@ import { LongTermGoalsHeaderComponent } from './long-term-goals-header/long-term
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: LongTermGoalsAnimations,
   standalone: true,
-  imports: [LongTermGoalsHeaderComponent,
+  imports: [LongTermGoalsHeaderComponent, LongTermGoalsItemComponent,
   ],
 })
 export class LongTermGoalsComponent implements OnInit {

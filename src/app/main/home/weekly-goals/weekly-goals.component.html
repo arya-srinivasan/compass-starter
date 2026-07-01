@@ -1,3 +1,8 @@
 <div class="weekly-goals-container">
-  weekly-goals works!
+  @for (task of task; track task.__id) {
+  <app-weekly-goals-item 
+    [goal]="task"
+    [hashtag]="hashtagMap[task.__hashtagId]"
+    ></app-weekly-goals-item>
+  }
 </div>

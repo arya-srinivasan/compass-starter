@@ -5,6 +5,7 @@ import { AuthStore } from 'src/app/core/store/auth/auth.store';
 import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch-write.service';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 import {QuarterlyGoalsComponent} from 'src/app/main/home/quarterly-goals/quarterly-goals.component';
+import { WeeklyGoalsComponent } from 'src/app/main/home/weekly-goals/weekly-goals.component';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,8 @@ import {QuarterlyGoalsComponent} from 'src/app/main/home/quarterly-goals/quarter
   animations: HomeAnimations,
   imports: [
     NavbarComponent, QuarterlyGoalsComponent
+    WeeklyGoalsComponent,
+    NavbarComponent,
   ]
 })
 export class HomeComponent implements OnInit {

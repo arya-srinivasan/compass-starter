@@ -1,7 +1,40 @@
+@import url(//fonts.googleapis.com/css?family=Oxygen);
+
+* {
+  font-family: Oxygen;
+}
+
 :host {
   display: block;
   .weekly-goals-header-container {
-    // REMOVE WHEN FINISHING LAYOUT STYLES
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: #4B5853;
+    width: 100%;
+    border: none;
+    .top-bar {
+      display: flex;
+      padding: 32px 10px 0px 18px;
+      .card-title {
+        font-size: 28px;
+      }
+      .edit-button: hover {
+        background: none;
+        border: none;
+        margin-left: auto;
+        cursor: pointer;
+        .edit-icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+    .week-timeframe {
+      padding-left: 18px;
+      margin-top: 24px;
+      font-size: 22px;
+      font-weight: bold;
+    }
   }
 }

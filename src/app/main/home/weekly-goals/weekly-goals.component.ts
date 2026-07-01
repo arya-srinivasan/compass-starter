@@ -3,6 +3,7 @@ import { WeeklyGoalsAnimations } from './weekly-goals.animations';
 import { User } from 'src/app/core/store/user/user.model';
 import { AuthStore } from 'src/app/core/store/auth/auth.store';
 import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch-write.service';
+import { WeeklyGoalsHeaderComponent } from 'src/app/main/home/weekly-goals/weekly-goals-header/weekly-goals-header.component'
 import { WeeklyGoalsItemComponent } from './weekly-goals-item/weekly-goals-item.component';
 import { WeeklyGoalData } from 'src/app/main/home/home.model';
 import { Timestamp } from '@angular/fire/firestore';
@@ -19,6 +20,7 @@ import { WeeklyGoalsModalComponent } from './weekly-goals-modal/weekly-goals-mod
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: WeeklyGoalsAnimations,
   standalone: true,
+  imports: [ WeeklyGoalsHeaderComponent
   imports: [ WeeklyGoalsItemComponent,
             WeeklyGoalsModalComponent, 
   ],
